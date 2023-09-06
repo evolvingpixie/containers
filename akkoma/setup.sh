@@ -1,8 +1,8 @@
 #!/bin/sh
-if [ $(arch) == "x86_64"]; then
+if [ $(arch) == "x86_64" ]; then
 	export ARCH="amd64"
 fi
-if [ $(arch) == "aarch64"]; then
+if [ $(arch) == "aarch64" ]; then
         export ARCH="arm64"
 fi
 
