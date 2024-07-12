@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '**/well-known-pod/*'
+  workflow_dispatch:
 
 jobs:
   docker:
