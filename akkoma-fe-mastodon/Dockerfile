@@ -3,6 +3,7 @@ WORKDIR /build
 
 RUN git clone https://akkoma.dev/esm/akkoma-fe.git ./ 
 COPY ./config.json /build/static/config.json
+RUN sed s/wetdry.world/shrimp1.dev.thetransagenda.gay/g -i ./src/boot/after_store.js
 RUN yarn
 RUN npm run build
 
