@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '**/interpunctbot/*'
+      - '.github/workflows/interpunctbot.yml'
   workflow_dispatch:
 
 jobs:
