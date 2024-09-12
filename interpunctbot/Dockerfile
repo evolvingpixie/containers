@@ -1,12 +1,13 @@
 FROM node:22
 # Link package to repo for publishing with actions
-LABEL org.opencontainers.image.source="https://github.com/evolvingpixie/containers" 
+LABEL org.opencontainers.image.source="https://github.com/evolvingpixie/containers"
+LABEL org.opencontainers.image.description="Builds https://github.com/pfgithub/interpunctbot with node22" 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
   apt update && apt install python-is-python3 
 WORKDIR /bot
 RUN git clone https://github.com/pfgithub/interpunctbot /bot
-RUN corepack enable && ls -l
+RUN corepack enable
 RUN yarn install --inline-builds
 #RUN yarn knex migrate:latest
 RUN yarn tsc
